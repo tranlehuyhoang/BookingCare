@@ -12,6 +12,9 @@ const ITEM_HEIGHT = 48;
 const useStyles = makeStyles((theme) => ({
   menuSpecialty: {
     position: "absolute !important",
+    justifyContent: "center",
+    display: "flex",
+    alignItems: "center",
   },
   titleHeader: {
     fontWeight: "600 !important",
@@ -22,12 +25,15 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     backgroundColor: "#f0f0f0",
     marginTop: "10px",
+    padding: "5px 10px"
+
   },
   menuItem: {
     display: "flex",
     alignItems: "center",
     listStyleType: "none",
     cursor: "pointer",
+    padding: "5px 10px"
   },
   avatar: {
     marginRight: theme.spacing(2),
@@ -57,7 +63,10 @@ const HomeMenuSearchSpecialty = (props) => {
   const [filteredClinic, setFilteredClinic] = useState([]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);
 
-  // Fetch data on component mount
+  const removeDiacritics = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -83,31 +92,26 @@ const HomeMenuSearchSpecialty = (props) => {
     fetchData();
   }, []);
 
-  // Update open state based on props.showMenuSearchSpecialty
   useEffect(() => {
     setOpen(props.showMenuSearchSpecialty);
   }, [props.showMenuSearchSpecialty]);
 
-  // Filter data based on searchQuery and update filtered arrays
   useEffect(() => {
     const filterData = () => {
-      const query = searchQuery ? searchQuery.toLowerCase() : '';
+      const query = searchQuery ? removeDiacritics(searchQuery.toLowerCase()) : '';
 
-      // Filter specialties
       const filteredSpecialties = dataSpecialty.filter(option =>
-        option.name.toLowerCase().includes(query)
+        removeDiacritics(option.name.toLowerCase()).includes(query)
       );
       setFilteredSpecialty(filteredSpecialties);
 
-      // Filter clinics
       const filteredClinics = dataClinic.filter(option =>
-        option.name.toLowerCase().includes(query)
+        removeDiacritics(option.name.toLowerCase()).includes(query)
       );
       setFilteredClinic(filteredClinics);
 
-      // Filter doctors
       const filteredDoctors = dataDoctors.filter(option =>
-        option.firstName.toLowerCase().includes(query)
+        removeDiacritics(option.firstName.toLowerCase()).includes(query)
       );
       setFilteredDoctors(filteredDoctors);
     };
@@ -115,27 +119,24 @@ const HomeMenuSearchSpecialty = (props) => {
     filterData();
   }, [searchQuery, dataSpecialty, dataClinic, dataDoctors]);
 
-  // Handle search input change
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
-  // Navigate to detail page based on item type and ID
   const handleViewDetail = (type, id) => () => {
     history.push(`/detail-${type}/${id}`);
-    setOpen(false); // Close the menu after navigating
+    setOpen(false);
   };
 
-  // Close the menu
   const handleClose = () => {
-    setOpen(false);
+    props.handleClickShowHomeMenuSearchSpecialty();
   };
 
   return (
     <Menu
       id="long-menu"
       keepMounted
-      open={open}
+      open={props.showMenuSearchSpecialty}
       anchorReference="none"
       PaperProps={{
         style: {

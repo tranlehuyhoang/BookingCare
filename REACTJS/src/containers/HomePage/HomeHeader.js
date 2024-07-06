@@ -43,8 +43,8 @@ class HomeHeader extends Component {
 
   handleClickShowHomeMenuSearchSpecialty = () => {
     this.setState({
-      // showMenuSearchSpecialty: !this.state.showMenuSearchSpecialty,
-      showMenuSearchSpecialty: true,
+      showMenuSearchSpecialty: !this.state.showMenuSearchSpecialty,
+      // showMenuSearchSpecialty: true,
     });
   };
 
@@ -170,7 +170,6 @@ class HomeHeader extends Component {
             <div className="right-content col-9 col-lg-5 col-xl-5 col-sm-9">
               <div
                 className="search"
-                onClick={() => this.handleClickShowHomeMenuSearchSpecialty()}
               >
                 <i className="fas fa-search"></i>
                 <FormattedMessage id="homeheader.search">
@@ -179,6 +178,8 @@ class HomeHeader extends Component {
                       type="text"
                       placeholder={placeholder}
                       onChange={this.handleSearchInputChange} // thêm sự kiện onChange
+                      onClick={() => this.handleClickShowHomeMenuSearchSpecialty()}
+
                     />
                   )}
                 </FormattedMessage>
@@ -187,6 +188,7 @@ class HomeHeader extends Component {
                   <HomeMenuSearchSpecialty
                     showMenuSearchSpecialty={this.state.showMenuSearchSpecialty}
                     searchQuery={this.state.searchQuery} // truyền biến searchQuery vào đây
+                    handleClickShowHomeMenuSearchSpecialty={this.handleClickShowHomeMenuSearchSpecialty}
                   />
                 )}
 
