@@ -12,7 +12,6 @@ const ITEM_HEIGHT = 48;
 const useStyles = makeStyles((theme) => ({
   menuSpecialty: {
     position: "absolute !important",
-
   },
   titleHeader: {
     fontWeight: "600 !important",
@@ -38,6 +37,11 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
     marginBottom: "10px",
     boxSizing: "border-box",
+  },
+  closeButton: {
+    textAlign: "right",
+    padding: "10px",
+    cursor: "pointer",
   },
 }));
 
@@ -122,6 +126,11 @@ const HomeMenuSearchSpecialty = (props) => {
     setOpen(false); // Close the menu after navigating
   };
 
+  // Close the menu
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Menu
       id="long-menu"
@@ -136,6 +145,9 @@ const HomeMenuSearchSpecialty = (props) => {
       }}
       className={classes.menuSpecialty}
     >
+      <li key="close-button" className={classes.closeButton} onClick={handleClose}>
+        Close
+      </li>
       <li key="search-input" className={classes.titleHeader}>
         <TextField
           placeholder="Search..."
