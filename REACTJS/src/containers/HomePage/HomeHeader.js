@@ -43,7 +43,8 @@ class HomeHeader extends Component {
 
   handleClickShowHomeMenuSearchSpecialty = () => {
     this.setState({
-      showMenuSearchSpecialty: !this.state.showMenuSearchSpecialty,
+      // showMenuSearchSpecialty: !this.state.showMenuSearchSpecialty,
+      showMenuSearchSpecialty: true,
     });
   };
 

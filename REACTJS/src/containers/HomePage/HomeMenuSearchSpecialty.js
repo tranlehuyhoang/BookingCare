@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Avatar from "@material-ui/core/Avatar";
+import TextField from "@material-ui/core/TextField";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { getAllClinic, getAllDoctors, getAllSpecialty } from "../../services/userService";
@@ -11,8 +12,7 @@ const ITEM_HEIGHT = 48;
 const useStyles = makeStyles((theme) => ({
   menuSpecialty: {
     position: "absolute !important",
-    top: "270px !important",
-    left: "550px !important",
+
   },
   titleHeader: {
     fontWeight: "600 !important",
@@ -27,9 +27,17 @@ const useStyles = makeStyles((theme) => ({
   menuItem: {
     display: "flex",
     alignItems: "center",
+    listStyleType: "none",
+    cursor: "pointer",
   },
   avatar: {
     marginRight: theme.spacing(2),
+  },
+  searchInput: {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "10px",
+    boxSizing: "border-box",
   },
 }));
 
@@ -37,6 +45,7 @@ const HomeMenuSearchSpecialty = (props) => {
   const classes = useStyles();
   const history = useHistory();
   const [open, setOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const [dataSpecialty, setDataSpecialty] = useState([]);
   const [dataClinic, setDataClinic] = useState([]);
   const [dataDoctors, setDataDoctors] = useState([]);
@@ -75,10 +84,10 @@ const HomeMenuSearchSpecialty = (props) => {
     setOpen(props.showMenuSearchSpecialty);
   }, [props.showMenuSearchSpecialty]);
 
-  // Filter data based on props.searchQuery and update filtered arrays
+  // Filter data based on searchQuery and update filtered arrays
   useEffect(() => {
     const filterData = () => {
-      const query = props.searchQuery ? props.searchQuery.toLowerCase() : '';
+      const query = searchQuery ? searchQuery.toLowerCase() : '';
 
       // Filter specialties
       const filteredSpecialties = dataSpecialty.filter(option =>
@@ -100,7 +109,12 @@ const HomeMenuSearchSpecialty = (props) => {
     };
 
     filterData();
-  }, [props.searchQuery, dataSpecialty, dataClinic, dataDoctors]);
+  }, [searchQuery, dataSpecialty, dataClinic, dataDoctors]);
+
+  // Handle search input change
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   // Navigate to detail page based on item type and ID
   const handleViewDetail = (type, id) => () => {
@@ -122,63 +136,61 @@ const HomeMenuSearchSpecialty = (props) => {
       }}
       className={classes.menuSpecialty}
     >
-      {/* Title for search results */}
-      <MenuItem key="title" className={classes.titleHeader}>
-        Kết quả tìm kiếm
-      </MenuItem>
-
-      {/* Display filtered specialties */}
-      <MenuItem key="specialty-header" className={classes.sectionHeader}>
+      <li key="search-input" className={classes.titleHeader}>
+        <TextField
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={handleSearchInputChange}
+          variant="outlined"
+          className={classes.searchInput}
+        />
+      </li>
+      <li key="specialty-header" className={classes.sectionHeader}>
         Chuyên khoa
-      </MenuItem>
+      </li>
       {filteredSpecialty.map(option => (
-        <MenuItem
+        <li
           key={option.id}
           onClick={handleViewDetail("specialty", option.id)}
           className={classes.menuItem}
         >
           <Avatar src={option.image} className={classes.avatar} />
           {option.name}
-        </MenuItem>
+        </li>
       ))}
 
-      {/* Display filtered clinics */}
-      <MenuItem key="clinic-header" className={classes.sectionHeader}>
+      <li key="clinic-header" className={classes.sectionHeader}>
         Bệnh viện
-      </MenuItem>
+      </li>
       {filteredClinic.map(option => (
-        <MenuItem
+        <li
           key={option.id}
           onClick={handleViewDetail("clinic", option.id)}
           className={classes.menuItem}
         >
           <Avatar src={option.image} className={classes.avatar} />
           {option.name}
-        </MenuItem>
+        </li>
       ))}
 
-      {/* Display filtered doctors */}
-      <MenuItem key="doctor-header" className={classes.sectionHeader}>
+      <li key="doctor-header" className={classes.sectionHeader}>
         Bác sỹ
-      </MenuItem>
-
+      </li>
       {filteredDoctors.map((option) => {
         let imageBase64 = "";
         if (option.image) {
-          imageBase64 = new Buffer.from(option.image, "base64").toString(
-            "binary"
-          );
+          imageBase64 = Buffer.from(option.image, "base64").toString("binary");
         }
         const imageUrl = imageBase64;
         return (
-          <MenuItem
+          <li
             key={option.id}
             onClick={handleViewDetail("doctor", option.id)}
             className={classes.menuItem}
           >
             <Avatar src={imageUrl} className={classes.avatar} />
             {option.firstName}
-          </MenuItem>
+          </li>
         );
       })}
     </Menu>
