@@ -1,0 +1,21 @@
+.tabs:hover {
+  background: #eff5ff;
+  border-radius: 5px;
+  color: #295dfb;
+}
+
+.avatar-profile {
+  min-height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tabs.active {
+  background: #eff5ff;
+  border-radius: 5px;
+  color: #295dfb;
+}

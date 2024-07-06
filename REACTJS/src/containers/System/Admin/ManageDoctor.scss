@@ -1,0 +1,17 @@
+.container {
+  overflow: hidden;
+}
+.table-manage {
+  overflow-x: auto;
+  .table {
+    width: 100%;
+    overflow: hidden;
+    min-width: 800px;
+    th,
+    td {
+      vertical-align: middle;
+      padding-left: 15px;
+      font-size: 13px;
+    }
+  }
+}

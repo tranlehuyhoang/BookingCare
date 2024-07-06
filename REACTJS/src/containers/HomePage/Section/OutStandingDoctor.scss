@@ -1,0 +1,68 @@
+.section-share {
+  &.section-outstanding-doctor {
+    background: #edfffa;
+
+    .section-container {
+      .section-content {
+        .slick-slider {
+          background: #edfffa;
+        }
+
+        .slider-customize {
+          padding: 15px;
+          width: 100%;
+          height: 275px;
+          cursor: pointer;
+
+          .slider-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            .img {
+              // background: url('../../../assets/medical-facility/114348-bv-viet-duc.jpg');
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center center;
+              width: 175px;
+              height: 175px;
+              border-radius: 50%;
+            }
+          }
+
+          .slider-title {
+            text-align: center;
+            padding: 20px 0 10px;
+            font-weight: 600;
+
+            .slider-doctor-position {
+              font-size: 14px;
+            }
+
+            .slider-doctor-name {
+              font-size: 16px;
+            }
+
+            .slider-doctor-specialty {
+              font-size: 14px;
+              font-weight: 300;
+            }
+          }
+
+          &:hover {
+            .slider-img {
+              transform: scale(1.05);
+              transition: all 0.5s ease;
+            }
+
+            .slider-title {
+              transition: all 0.5s ease;
+              color: #45c3d2;
+            }
+          }
+        }
+      }
+    }
+  }
+}

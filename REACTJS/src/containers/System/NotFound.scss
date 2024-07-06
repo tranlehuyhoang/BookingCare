@@ -1,0 +1,50 @@
+.error404 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  .error-img {
+    background-image: url("../../assets/not-found/not-found.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 75%;
+    height: 75%;
+    flex: 1;
+  }
+  .error-content {
+    flex: 1;
+    text-align: center;
+    padding-right: 150px;
+
+    h3 {
+      margin-bottom: 30px;
+      color: #333;
+      font-size: 48px;
+      font-weight: 600;
+    }
+
+    .list-contact {
+      display: flex;
+      justify-content: center;
+
+      .itemct {
+        padding: 10px;
+
+        button {
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ffd400;
+          border: none;
+          color: #333;
+          border-radius: 5px;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

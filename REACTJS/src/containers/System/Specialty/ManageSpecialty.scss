@@ -1,0 +1,24 @@
+.manage-specialty-container {
+  padding: 0 15px;
+  overflow: hidden;
+
+  .ms-title {
+    text-align: center;
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+.table-manage {
+  overflow-x: auto;
+  .table {
+    width: 100%;
+    overflow: auto;
+    min-width: 800px;
+    th,
+    td {
+      background: #fff;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+/* Text */
+$text: $colorDark;
+$textSecondary: $colorSecondary;
+$textPrimary: $colorPrimary;
+$textPrimaryMedium: $colorPrimaryMedium;
+$textSuccess: $colorSuccess;
+$textWarning: $colorWarning;
+$textDanger: $colorDanger;
+$textGray: $colorGray;
+$textSemantic04: $colorSemantic04;
+
+@for $i from 8 through 35 {
+    .fs-#{$i} {
+        font-size: #{$i}px !important;
+        //line-height: #{$i + 3}px;
+    }
+}
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+h4 {
+    font-size: 17px;
+}
+
+h5 {
+    font-size: 17px;
+}
+
+h6 {
+    font-size: 15px;
+}
+
+.fs-12, .fs-14 {
+    line-height: 24px;
+}
+
+.fs-16, .fs-20 {
+    line-height: 32px;
+}
+
+.fs-24 {
+    line-height: 40px;
+}
+
+.fs-32 {
+    line-height: 48px
+}
+
+.fs-40 {
+    font-size: 40px;
+    line-height: 64px
+}
+
+.fs-48 {
+    font-size: 48px;
+    line-height: 64px
+}
+
+.fs-64 {
+    font-size: 64px;
+    line-height: 72px;
+}
+
+.fs-72 {
+    font-size: 72px;
+    line-height: 80px
+}
+
+.fs-80 {
+    font-size: 80px;
+    line-height: 80px
+}
+
+a {
+    color: $textPrimary;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+.font-weight-normal {
+    font-weight: $fontWeightNormal !important;
+}
+
+.font-weight-medium {
+    font-weight: $fontWeightMedium !important;
+}
+
+.font-weight-semi-bold {
+    font-weight: $fontWeightSemiBold !important;
+}
+
+.font-weight-bold {
+    font-weight: $fontWeightBold !important;
+}
+
+.font-weight-black {
+    font-weight: $fontWeightBlack !important;
+}
+
+.text-primary {
+    color: $textPrimary !important;
+}
+
+.text-primary-medium {
+    color: $textPrimaryMedium !important;
+}
+
+.text-success {
+    color: $textSuccess !important;
+}
+
+.text-warning {
+    color: $textWarning !important;
+}
+
+.text-danger {
+    color: $textDanger !important;
+}
+
+.text-secondary {
+    color: $textSecondary !important;
+}
+
+.text-gray {
+    color: $colorGray !important;
+}
+
+.text-muted {
+    color: $colorPrimaryMedium !important;
+}
+
+.text-normal {
+    color: $text !important;
+}
+
+.text-semantic04 {
+    color: $colorSemantic04 !important;
+}
+.font-dm-serif {
+    font-family: "DM Serif Text";
+}

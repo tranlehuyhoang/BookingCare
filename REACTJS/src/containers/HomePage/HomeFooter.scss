@@ -1,0 +1,124 @@
+.home-footer {
+  background: #ccc;
+
+  .footer-container {
+    padding: 20px 0 10px;
+
+    .footer-content {
+      display: flex;
+      flex-direction: row;
+
+      @media (max-width: 767.98px) {
+        flex-direction: column;
+      }
+
+      .content-left {
+        flex: 2;
+        margin: 20px 0;
+        margin-right: 10px;
+
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        .content-info {
+          padding: 5px 0;
+          cursor: pointer;
+
+          &:hover {
+            color: #45c3d2;
+          }
+
+          .icon {
+            font-size: 16px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .content-center {
+        flex: 1;
+        margin: 20px 10px;
+
+        .footer-logo {
+          background: url("../../assets/hospital-icon.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+        }
+
+        .content-info {
+          cursor: pointer;
+
+          a {
+            padding: 5px 0;
+            display: inline-block;
+            font-size: 14px;
+            text-decoration: none;
+            color: #000;
+
+            &:hover {
+              color: #45c3d2;
+            }
+          }
+        }
+      }
+
+      .content-right {
+        flex: 2;
+        margin: 20px 0;
+        margin-left: 10px;
+
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        .content-info {
+          padding: 5px 0;
+          display: inline-block;
+          text-decoration: none;
+          color: #000;
+          cursor: pointer;
+
+          &:hover {
+            color: #45c3d2;
+          }
+
+          h4 {
+            font-size: 16px;
+            font-weight: 600;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-info {
+  background-color: #45c3d2;
+
+  .footer-info-content {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .copy-right {
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px;
+    }
+  }
+}

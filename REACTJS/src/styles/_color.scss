@@ -1,0 +1,64 @@
+/* Vesion 2.0 */
+$colorBlack: #000000;
+$colorDark: #292929;
+$colorSecondary: #5b6fa3;
+$colorSecondaryDark: #42548c;
+$colorSecondaryUltraDark: #2d3d75;
+$colorPrimary: #295dfb;
+$colorPrimaryMedium: #bfc7da;
+$colorPrimaryMiddle: #e4ecfa;
+$colorPrimaryLight: #f6f9fd;
+$colorPrimaryLight2: #d4e3fe;
+$colorPrimaryUltraLight: #eff5ff;
+$colorPrimarySuperLight: #f5f6fd;
+$colorPrimaryDark: #1d47d7;
+$colorPrimaryUltraDark: #1434b4;
+$colorDanger: #e90b0b;
+$colorDangerMedium: #f8826a;
+$colorDangerLight: #fddecd;
+$colorDangerDark: #c80818;
+$colorDangerUltraDark: #a70521;
+$colorWarning: #ff9900;
+$colorWarningMedium: #ffe299;
+$colorWarningLight: #fff2cc;
+$colorWarningDark: #FAB90F;
+$colorWarningUltraDark: #b75f00;
+$colorSuccess: #4ac229;
+$colorSuccessMedium: #a5ec7c;
+$colorSuccessLight: #ccf8aa;
+$colorSuccessDark: #31a61d;
+$colorSuccessUltraDark: #1c8b14;
+$colorSuccessSuperLight: #d3fac8;
+$colorGray: #6d6d6d;
+$colorGrayMedium: #cfcfcf;
+$colorGrayLight: #f2f2f2;
+$colorDisable: $colorPrimaryMedium;
+$colorWhite: #fff;
+$colorHover: $colorPrimarySuperLight;
+$colorDark01: #1d295e;
+$colorDark02: #151f50;
+$colorDark03: #0e1643;
+$colorDark04: #090e36;
+$colorDark05: #05092d;
+$colorPink: #FA417A;
+$colorPinkLight: #EA98D4;
+$colorSemantic04: #9baace;
+
+/* Border */
+$colorBorder: $colorPrimaryMedium;
+$colorBorderLight: #eeebeb;
+
+/* Background */
+$bgLight: $colorPrimaryLight;
+$bgDark: $colorDark;
+$bgWhite: $colorWhite;
+$bgTable: $colorPrimaryLight;
+$bgGradient: $colorPrimarySuperLight;
+$bgGradientLight: #fbfdff;
+
+/* Shadow  */
+$shadowColor: $colorSecondary;
+$shadowOpacity: 0.11;
+$shadow: 0px 3px 20px rgba($shadowColor, $shadowOpacity);
+$shadowLight: 0px 3px 10px rgba($shadowColor, $shadowOpacity);
+$shadowBold: 0px 20px 20px rgba(91, 111, 163, 0.3);

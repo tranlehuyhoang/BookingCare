@@ -1,0 +1,125 @@
+.doctor-detail-container {
+  // background: #edfffa;
+  background: #fff;
+
+  .doctor-detail-section {
+    .intro-doctor {
+      padding-top: 30px;
+      padding-bottom: 15px;
+
+      .intro-left {
+        display: flex;
+        justify-content: center;
+
+        .avatar {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          height: 200px;
+          width: 200px;
+          border-radius: 50%;
+        }
+      }
+      .intro-right {
+        padding-right: 30px;
+
+        .intro-position {
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        .intro-name {
+          font-size: 24px;
+          font-weight: 600;
+          padding-bottom: 10px;
+        }
+
+        .intro-desc {
+          text-align: justify;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .schedule-doctor {
+      padding: 15px 10px;
+
+      .content-left {
+        padding-bottom: 20px;
+      }
+
+      .content-right {
+        padding-bottom: 30px;
+      }
+    }
+
+    .detail-infor-doctor {
+      padding: 15px 0;
+      .info-doctor {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background-color: #f9f9f9;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+        padding: 30px 30px;
+
+        img {
+          width: 300px;
+          padding: 10px;
+        }
+      }
+    }
+
+    .comment-doctor {
+      min-height: 50px;
+      padding-top: 15px;
+      padding-bottom: 30px;
+    }
+
+    @media (max-width: 991.98px) {
+      .intro-doctor {
+        .intro-left {
+          .avatar {
+            height: 175px;
+            width: 175px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .intro-doctor {
+        .intro-left {
+          .avatar {
+            height: 125px;
+            width: 125px;
+          }
+        }
+        .intro-right {
+          .intro-position {
+            font-size: 14px;
+          }
+
+          .intro-name {
+            font-size: 20px;
+          }
+
+          .intro-desc {
+            text-align: justify;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .intro-doctor {
+        .intro-left {
+          .avatar {
+            height: 100px;
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+}

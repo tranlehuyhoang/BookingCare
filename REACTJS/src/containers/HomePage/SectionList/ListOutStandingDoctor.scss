@@ -1,0 +1,40 @@
+.list-doctor-container {
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 0px 16px #c0c0c0 !important;
+    background: #edfffa !important;
+
+    .toolbar-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  .list-doctor-content {
+    .content {
+      box-shadow: none;
+      border-radius: 0;
+      margin: 0;
+
+      .menu-content {
+        padding: 0;
+
+        .list-content {
+          padding: 20px 0;
+
+          .bgImageListSpecialty {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+  }
+}
